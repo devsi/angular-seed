@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const helpers = require('../helpers');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -48,10 +47,6 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: [ 'app', 'vendor', 'polyfills' ]
-        }),
-
-        new HtmlWebpackPlugin({
-            template: 'src/index.html'
         }),
 
         new webpack.ContextReplacementPlugin(

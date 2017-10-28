@@ -10,7 +10,7 @@ module.exports = webpackMerge(commonConfig, {
     devtool: 'source-map',
 
     output: {
-        path: helpers.root('dist'),
+        path: helpers.root('web/js'),
         publicPath: '/',
         filename: '[name].[hash].js',
         chunkFilename: '[id].[hash].chunk.js'
@@ -23,7 +23,7 @@ module.exports = webpackMerge(commonConfig, {
                 keep_fnames: true
             }
         }),
-        new ExtractTextPlugin('styles.[hash].css'),
+        new ExtractTextPlugin('../css/styles.[hash].css'),
         new webpack.DefinePlugin({
             'process.env': {
                 'ENV': JSON.stringify(ENV)
